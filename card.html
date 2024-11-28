@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытка</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('mountains.jpg'); /* Замени на имя загруженного изображения */
+            background-size: cover; /* Масштабирует изображение на весь экран */
+            background-position: center; /* Центрует изображение */
+            background-repeat: no-repeat; /* Отключает повторение фона */
+            font-family: Arial, sans-serif;
+            color: black; /* Чёрный цвет текста */
+        }
+        .card {
+            width: 70%;
+            margin: 100px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Белый полупрозрачный фон */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+            text-align: center;
+            cursor: pointer;
+        }
+        .reveal-text {
+            display: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .card.opened .reveal-text {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="toggleText()">
+        <h1>С Днём Рождения! Нажми, чтобы открыть</h1>
+        <p class="reveal-text">Поздравляем! Дарим ваучер на лыжную гостиницу 500 USD!</p>
+    </div>
+
+    <script>
+        function toggleText() {
+            const card = document.querySelector('.card');
+            card.classList.toggle('opened');
+        }
+    </script>
+</body>
+</html>
+
